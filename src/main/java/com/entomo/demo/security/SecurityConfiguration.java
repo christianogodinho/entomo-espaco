@@ -56,7 +56,7 @@ public class SecurityConfiguration {
                                 // Se você quiser permitir TODOS os endpoints SEM autenticação para testes, use a linha abaixo (com cautela):
                                 //.requestMatchers("/**").permitAll()
                                 // Se você quiser permitir alguns IPs SEM autenticação para testes, use a linha abaixo (com cautela):
-                                .requestMatchers("/**").access(new WebExpressionAuthorizationManager("hasIpAddress('192.168.0.0/24')"))
+                                .requestMatchers("/**").access(new WebExpressionAuthorizationManager("hasIpAddress('186.205.0.0/24')"))
                         // Caso contrário, todas as outras requisições exigem autenticação:
                         //.anyRequest().authenticated()
                 )
@@ -92,7 +92,6 @@ public class SecurityConfiguration {
             // for Swagger UI v3 (OpenAPI)
             "/v3/api-docs/**",
             "/swagger-ui/**",
-            "/actuator/health/**"
     };
 
     private static final String[] CORS_ALLOWED_ORIGINS= {
