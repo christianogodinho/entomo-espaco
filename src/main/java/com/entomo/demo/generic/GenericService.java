@@ -93,10 +93,10 @@ public abstract class GenericService<EntityT extends GenericEntity<EntityT>, Req
     }
 
     @Transactional
-    public void delete(Integer id){
-        //check if object with this id exists
-        get(id);
+    public ResponseT delete(Integer id) {
+        ResponseT existing = get(id);
         repository.deleteById(id);
+        return existing;
     }
 
     @Transactional

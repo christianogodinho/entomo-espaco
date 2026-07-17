@@ -7,6 +7,7 @@ import com.entomo.demo.generic.GenericService;
 import com.entomo.demo.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CabinetService extends GenericService<Cabinet, CabinetRequest, CabinetResponse> {
@@ -26,5 +27,4 @@ public class CabinetService extends GenericService<Cabinet, CabinetRequest, Cabi
     public CabinetResponse mapToResponse(Cabinet cabinet){
         return this.modelMapper.map(cabinet, CabinetResponse.class);
     }
-
 }

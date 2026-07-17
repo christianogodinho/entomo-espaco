@@ -56,7 +56,8 @@ public class SecurityConfiguration {
                                 // Se você quiser permitir TODOS os endpoints SEM autenticação para testes, use a linha abaixo (com cautela):
                                 //.requestMatchers("/**").permitAll()
                                 // Se você quiser permitir alguns IPs SEM autenticação para testes, use a linha abaixo (com cautela):
-                                .requestMatchers("/**").access(new WebExpressionAuthorizationManager("hasIpAddress('186.205.0.0/24')"))
+                                .anyRequest().permitAll()
+                                // .requestMatchers("/**").access(new WebExpressionAuthorizationManager("hasIpAddress('186.205.0.0/24')"))
                         // Caso contrário, todas as outras requisições exigem autenticação:
                         //.anyRequest().authenticated()
                 )
@@ -95,7 +96,7 @@ public class SecurityConfiguration {
     };
 
     private static final String[] CORS_ALLOWED_ORIGINS= {
-           "http://localhost:5174"
+           "http://localhost:8080"
     };
 
     private static final String[] CORS_ALLOWED_METHODS = {
